@@ -10,12 +10,6 @@ input {
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Space Mono", monospace;
-  font-size: 16px;
-  background: hsl(183, 100%, 15%);
-}
-
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -26,5 +20,119 @@ body {
 }
 
 body {
-  background: hsl(183, 100%, 15%);
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  background: hsl(185, 41%, 84%);
 }
+
+.header {
+  width: 100%;
+  padding: 3.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  background: white;
+  width: 100%;
+  max-width: 1000px;
+  margin-inline: auto;
+  padding-bottom: 1.5em;
+  border-radius: 1.4em 1.4em 0 0;
+}
+
+.form {
+  width: 86%;
+  margin-inline: auto;
+  padding-top: 2.4em;
+}
+.form .label {
+  font-size: 1.4rem;
+  color: hsl(183, 100%, 15%);
+}
+.form .input__control {
+  position: relative;
+  margin-top: 0.3em;
+  margin-bottom: 2em;
+}
+.form .input__control .num__input {
+  background: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  width: 100%;
+}
+.form .input__control svg {
+  position: absolute;
+  left: 1.3em;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.form .input__control svg:focus {
+  border: 2px solid hsl(172, 67%, 45%);
+}
+.form .num__input {
+  font-family: "Space Mono", monospace;
+  font-size: 2.4rem;
+  direction: rtl;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 4px 0.8em;
+}
+
+.tips__control {
+  margin-top: 1em;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+.tips__control .tips {
+  background: hsl(183, 100%, 15%);
+  color: hsl(0, 0%, 100%);
+  cursor: pointer;
+}
+.tips__control .custom {
+  background: hsl(189, 41%, 97%);
+  color: hsl(183, 100%, 15%);
+  width: 16.125rem;
+}
+
+.calc {
+  background: hsl(183, 100%, 15%);
+  color: _;
+  width: 86%;
+  padding: 2.4em 1.4em 1.4em 1.4em;
+  margin-inline: auto;
+  border-radius: 1em;
+}
+.calc .calc__amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.calc .calc__amount .calc__ref {
+  color: hsl(189, 41%, 97%);
+  font-size: 1.4rem;
+}
+.calc .calc__amount .calc__ref small {
+  color: hsl(184, 14%, 56%);
+}
+.calc .calc__amount .calc__output {
+  font-size: 3rem;
+  color: hsl(172, 67%, 45%);
+}
+
+.reset {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+  font-family: "Space Mono", monospace;
+  width: 100%;
+  font-size: 2.4rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 4px 0.8em;
+  margin-top: 0.5em;
+}/*# sourceMappingURL=styles.css.map */
