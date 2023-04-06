@@ -1,0 +1,30 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+form,
+input {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+  background: hsl(183, 100%, 15%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  background: hsl(183, 100%, 15%);
+}

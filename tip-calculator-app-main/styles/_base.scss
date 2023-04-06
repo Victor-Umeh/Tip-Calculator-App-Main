@@ -5,3 +5,18 @@ $grayishCyan: hsl(184, 14%, 56%);
 $lightGrayishCyan: hsl(185, 41%, 84%);
 $veryLightGrayishCyan: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
+
+html {
+  font-size: 62.5%;
+}
+*,
+form,
+input {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Space Mono", monospace;
+  font-size: 16px;
+}
