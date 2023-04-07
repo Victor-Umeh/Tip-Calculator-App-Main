@@ -95,7 +95,7 @@ body {
   border-radius: 5px;
   padding: 4px 0.8em;
 }
-.form .num__input:is(input):focus {
+.form .num__input:is(input):focus-within {
   outline: 2px solid hsl(172, 67%, 45%);
 }
 

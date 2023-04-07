@@ -84,7 +84,7 @@ body {
     outline: none;
     border-radius: 5px;
     padding: 4px 0.8em;
-    &:is(input):focus {
+    &:is(input):focus-within {
       outline: 2px solid $primaryColor;
     }
   }

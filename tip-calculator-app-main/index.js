@@ -7,13 +7,24 @@ const resetBtn = document.querySelector(".reset");
 const tipAmount = document.querySelector(".per__person");
 const totalPerson = document.querySelector(".total__person");
 
-tipPercentages.forEach((e) => {
+let tip = 0;
+
+tipPercentages.forEach((e, i) => {
   e.addEventListener("click", tipsFunc);
 });
 
-let tip;
 function tipsFunc(e) {
-  tip = e.target.textContent;
-  e.target.classList.add("active");
+  const element = e.target;
+  tip = Number(element.textContent.replace("%", ""));
   console.log(tip);
 }
+
+// if (element.classList.contains("active")) {
+//     element.classList.remove("active");
+//     if (!element.classList.contains("active")) {
+//       !element && element.classList.remove("active");
+//     }
+//   } else {
+//     element.classList.add("active");
+//   }
+//   console.log(!element);
