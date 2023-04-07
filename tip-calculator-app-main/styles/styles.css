@@ -145,6 +145,7 @@ body {
   .calc {
     display: flex;
     flex-direction: column;
+    padding: 3.4em 2.4em 2.4em 2.4em;
   }
 }
 .calc .calc__amount {
@@ -184,7 +185,7 @@ body {
   transition: background 0.3s ease-out;
 }
 .reset:hover {
-  background: hsl(185, 41%, 84%);
+  background: hsl(172, 67%, 70%);
 }
 
 .input__label {
