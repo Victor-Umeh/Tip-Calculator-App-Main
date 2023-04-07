@@ -95,6 +95,9 @@ body {
   border-radius: 5px;
   padding: 4px 0.8em;
 }
+.form .num__input:is(input):focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
 
 .tips__control {
   margin-top: 1em;
@@ -111,7 +114,13 @@ body {
 .tips__control .tips {
   background: hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
+  border: none;
+  outline: none;
   cursor: pointer;
+}
+.tips__control .tips.active {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }
 .tips__control .custom {
   background: hsl(189, 41%, 97%);
