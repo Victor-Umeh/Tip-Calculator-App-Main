@@ -84,7 +84,7 @@ body {
   transform: translateY(-50%);
 }
 .form .input__control svg:focus {
-  border: 2px solid hsl(172, 67%, 45%);
+  border: 2px solid rgb(38, 192, 171);
 }
 .form .num__input {
   font-family: "Space Mono", monospace;
@@ -96,7 +96,10 @@ body {
   padding: 4px 0.8em;
 }
 .form .num__input:is(input):focus-within {
-  outline: 2px solid hsl(172, 67%, 45%);
+  outline: 2px solid rgb(38, 192, 171);
+}
+.form .error:is(input):focus-within {
+  outline: 2px solid rgb(248, 69, 69);
 }
 
 .tips__control {
@@ -119,7 +122,7 @@ body {
   cursor: pointer;
 }
 .tips__control .tips.active {
-  background: hsl(172, 67%, 45%);
+  background: rgb(38, 192, 171);
   color: hsl(183, 100%, 15%);
 }
 .tips__control .custom {
@@ -172,14 +175,17 @@ body {
 }
 .calc .calc__amount .calc__output {
   font-size: 3rem;
-  color: hsl(172, 67%, 45%);
+  color: rgb(38, 192, 171);
+  width: 165.2px;
+  text-align: right;
+  overflow-x: hidden;
 }
 .calc .calc__amount:is(:nth-child(2)) {
   margin-bottom: auto;
 }
 
 .reset {
-  background: hsl(172, 67%, 45%);
+  background: rgb(38, 192, 171);
   color: hsl(183, 100%, 15%);
   font-family: "Space Mono", monospace;
   width: 100%;
@@ -203,10 +209,6 @@ body {
   color: rgb(248, 69, 69);
 }
 
-.num__input.error {
-  border: 2px solid rgb(248, 69, 69);
-}
-
-.error {
+.bill__error {
   color: rgb(248, 69, 69);
 }/*# sourceMappingURL=styles.css.map */

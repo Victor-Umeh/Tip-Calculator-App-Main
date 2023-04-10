@@ -1,7 +1,7 @@
 @use "base";
 @use "attrition";
 
-$primaryColor: hsl(172, 67%, 45%);
+$primaryColor: rgb(38, 192, 171);
 $veryDarkCyan: hsl(183, 100%, 15%);
 $darkGrayishCyan: hsl(186, 14%, 43%);
 $grayishCyan: hsl(184, 14%, 56%);
@@ -9,6 +9,7 @@ $lightGrayishCyan: hsl(185, 41%, 84%);
 $veryLightGrayishCyan: hsl(189, 41%, 97%);
 $white: hsl(0, 0%, 100%);
 $mainWidth: 86%;
+$error: rgb(248, 69, 69);
 
 @mixin componentsColor($bg, $clr) {
   background: $bg;
@@ -88,6 +89,12 @@ body {
       outline: 2px solid $primaryColor;
     }
   }
+
+  .error {
+    &:is(input):focus-within {
+      outline: 2px solid $error;
+    }
+  }
 }
 .tips__control {
   margin-top: 1em;
@@ -156,6 +163,9 @@ body {
     .calc__output {
       font-size: 3rem;
       color: $primaryColor;
+      width: 165.2px;
+      text-align: right;
+      overflow-x: hidden;
     }
   }
   .calc__amount:is(:nth-child(2)) {
@@ -183,11 +193,8 @@ body {
 .input__label {
   display: flex;
   justify-content: space-between;
-  color: rgb(248, 69, 69);
+  color: $error;
 }
-.num__input.error {
-  border: 2px solid rgb(248, 69, 69);
-}
-.error {
-  color: rgb(248, 69, 69);
+.bill__error {
+  color: $error;
 }
