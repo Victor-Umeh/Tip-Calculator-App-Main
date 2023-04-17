@@ -84,7 +84,7 @@ body {
   transform: translateY(-50%);
 }
 .form .input__control svg:focus {
-  border: 2px solid rgb(38, 192, 171);
+  border: 2px solid hsl(172, 67%, 45%);
 }
 .form .num__input {
   font-family: "Space Mono", monospace;
@@ -96,7 +96,7 @@ body {
   padding: 4px 0.8em;
 }
 .form .num__input:is(input):focus-within {
-  outline: 2px solid rgb(38, 192, 171);
+  outline: 2px solid hsl(172, 67%, 45%);
 }
 .form .error:is(input):focus-within {
   outline: 2px solid rgb(248, 69, 69);
@@ -120,10 +120,6 @@ body {
   border: none;
   outline: none;
   cursor: pointer;
-}
-.tips__control .tips.active {
-  background: rgb(38, 192, 171);
-  color: hsl(183, 100%, 15%);
 }
 .tips__control .custom {
   background: hsl(189, 41%, 97%);
@@ -175,7 +171,7 @@ body {
 }
 .calc .calc__amount .calc__output {
   font-size: 3rem;
-  color: rgb(38, 192, 171);
+  color: hsl(172, 67%, 45%);
   width: 165.2px;
   text-align: right;
   overflow-x: hidden;
@@ -185,7 +181,7 @@ body {
 }
 
 .reset {
-  background: rgb(38, 192, 171);
+  background: hsl(172, 67%, 30%);
   color: hsl(183, 100%, 15%);
   font-family: "Space Mono", monospace;
   width: 100%;
@@ -199,8 +195,14 @@ body {
   cursor: pointer;
   transition: background 0.3s ease-out;
 }
-.reset:hover {
-  background: hsl(172, 67%, 70%);
+
+.hover {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+.hover:hover {
+  background: #7fe6d8;
 }
 
 .input__label {
@@ -211,4 +213,9 @@ body {
 
 .bill__error {
   color: rgb(248, 69, 69);
+}
+
+.tips.active {
+  background: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }/*# sourceMappingURL=styles.css.map */

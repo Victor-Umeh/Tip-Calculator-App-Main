@@ -1,7 +1,7 @@
 @use "base";
 @use "attrition";
 
-$primaryColor: rgb(38, 192, 171);
+$primaryColor: hsl(172, 67%, 45%);
 $veryDarkCyan: hsl(183, 100%, 15%);
 $darkGrayishCyan: hsl(186, 14%, 43%);
 $grayishCyan: hsl(184, 14%, 56%);
@@ -111,9 +111,6 @@ body {
     outline: none;
     cursor: pointer;
   }
-  .tips.active {
-    @include componentsColor($primaryColor, $veryDarkCyan);
-  }
   .custom {
     @include componentsColor($veryLightGrayishCyan, $veryDarkCyan);
     min-width: 12rem;
@@ -173,7 +170,7 @@ body {
   }
 }
 .reset {
-  @include componentsColor($primaryColor, $veryDarkCyan);
+  @include componentsColor(hsl(172, 67%, 30%), $veryDarkCyan);
   font-family: "Space Mono", monospace;
   width: 100%;
   font-size: 1.8rem;
@@ -186,15 +183,26 @@ body {
   cursor: pointer;
   transition: background 0.3s ease-out;
 
-  &:hover {
-    background: hsl(172, 67%, 70%);
-  }
+  // &:hover {
+  //   background: #7fe6d8;
+  // }
+}
+.hover {
+  @include componentsColor($primaryColor, $veryDarkCyan);
+}
+.hover:hover {
+  background: #7fe6d8;
 }
 .input__label {
   display: flex;
   justify-content: space-between;
   color: $error;
 }
+
+// Classes used in javascript----------------------------
 .bill__error {
   color: $error;
+}
+.tips.active {
+  @include componentsColor($primaryColor, $veryDarkCyan);
 }
