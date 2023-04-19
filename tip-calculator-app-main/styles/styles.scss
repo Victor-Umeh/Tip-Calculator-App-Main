@@ -123,6 +123,14 @@ body {
     }
     .tips {
       font-size: 2rem;
+      &:hover {
+        @include componentsColor(hsl(172, 67%, 75%), $veryDarkCyan);
+      }
+    }
+    .tips.active {
+      &:hover {
+        @include componentsColor($primaryColor, $veryDarkCyan);
+      }
     }
     .custom,
     .tips {

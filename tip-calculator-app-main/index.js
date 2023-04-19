@@ -9,7 +9,6 @@ const resetBtn = document.querySelector(".reset");
 const tipAmount = document.querySelector(".per__person");
 const totalPerson = document.querySelector(".total__person");
 
-resetBtn.setAttribute("disabled", true);
 let tip = 0;
 
 ////////////////////////////EVENT HANDLERS
@@ -65,54 +64,13 @@ numOfPeople.addEventListener("input", (e) => {
   }
 });
 
-let cTip = 0;
 //----------------Custom tip percentage
 customTipPercentages.addEventListener("input", (e) => {
   e.preventDefault();
   const value = Number(customTipPercentages.value);
-  cTip = value;
-  console.log(cTip);
 });
-console.log(cTip);
-// Error check
-// if (!numPersons && numPersons !== 0) {
-//   numOfPeople.classList.add("error");
-//   errorMsg.textContent = "Enter a number";
-// }
-//--------------------------------------------------------------------
-// const errorMsg = document.querySelector(".bill__error");
-// if (!value && value !== 0) {
-//   errorMsg.textContent = "Enter a number";
-//   billInput.classList.add("error");
-// } else {
-//   errorMsg.textContent = "";
-//   billInput.classList.remove("error");
 
-//   // Updating tip value
-
-//   // per person = value * %
-//   const per_person = (value * 5) / 100;
-
-//   // total = value * people * %
-//   const totalPersons = ((value * 5) / 100) * 3;
-
-//   // Update the DOM-----------------
-//   /////Tip Per Person
-//   tipAmount.textContent =
-//     tipAmount.textContent.slice(0, 1) + per_person.toFixed(2);
-
-//   //////Tip Total Person
-//   totalPerson.textContent =
-//     totalPerson.textContent.slice(0, 1) + totalPersons.toFixed(2);
-
-//   //Disables reset btn if billinput is empty or
-//   // reverse if billinput contain a value
-//   billInput.value
-//     ? resetBtn.classList.add("hover")
-//     : resetBtn.classList.remove("hover");
-// }
 ////////////////////////////FUNCTIONS
-
 // function tipCalc(bill, tip, people) {
 //   return ((bill * tip) / 100) * people;
 // }
