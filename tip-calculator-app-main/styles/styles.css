@@ -134,6 +134,7 @@ body {
   }
   .tips__control .tips {
     font-size: 2rem;
+    transition: all 0.3s;
   }
   .tips__control .tips:hover {
     background: hsl(172, 67%, 75%);
