@@ -11,7 +11,7 @@ const billInput = document.querySelector("#bill"),
   parentTipContainer = document.querySelector(".tips__control"),
   errorMsg = document.querySelector(".people__error");
 
-let tip, people, customTip;
+let tip, people, customTip, clickedTip;
 
 ////////////////////////////EVENT HANDLERS
 
@@ -19,7 +19,7 @@ let tip, people, customTip;
 parentTipContainer.addEventListener("click", (e) => {
   e.preventDefault();
   const clickedEl = e.target;
-
+  clickedTip = clickedEl;
   //Removes active class
   document.querySelector(".active")?.classList.remove("active");
   clickedEl.classList.add("active");
@@ -37,21 +37,16 @@ billInput.addEventListener("input", (e) => {
   console.log(tip);
   // Update the DOM-----------------
 
-  if (tip) {
-    if (people === "" || people === 0) {
-      errorMsg.textContent = "Can't be zero";
-    }
-    /////Tip Per Person
-    tipAmount.textContent =
-      tipAmount.textContent.slice(0, 1) + (value * tip) / 100;
+  //Tip percentage passed either from buttons or custom input field
+  const calcTip = tip ? tip : customTip;
+  /////Tip Per Person
+  tipAmount.textContent =
+    tipAmount.textContent.slice(0, 1) + (value * calcTip) / 100;
 
-    //////Tip Total Person
-    totalPerson.textContent =
-      totalPerson.textContent.slice(0, 1) +
-      (value * (people ? people : 1) * tip) / 100;
-  } else {
-    errorMsg.textContent = "";
-  }
+  //////Tip Total Person
+  totalPerson.textContent =
+    totalPerson.textContent.slice(0, 1) +
+    (value * (people ? people : 1) * calcTip) / 100;
 
   //Deactivates reset btn if billinput is empty or
   // reverse if billinput contain a value
@@ -83,6 +78,12 @@ customTipPercentages.addEventListener("input", (e) => {
   customTip = value;
 });
 
+//Reset
+resetBtn.addEventListener("click", () => {
+  billInput.value = "";
+  numOfPeople.value = "";
+  customTipPercentages.value = "";
+});
 //Clears input fields when page is reloaded
 window.addEventListener("load", () => {
   customTipPercentages.value = "";
