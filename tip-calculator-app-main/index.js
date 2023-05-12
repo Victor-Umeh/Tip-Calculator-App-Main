@@ -11,7 +11,7 @@ const billInput = document.querySelector("#bill"),
   parentTipContainer = document.querySelector(".tips__control"),
   errorMsg = document.querySelector(".people__error");
 
-let tip, people;
+let tip, people, customTip;
 
 ////////////////////////////EVENT HANDLERS
 
@@ -37,8 +37,8 @@ billInput.addEventListener("input", (e) => {
   console.log(tip);
   // Update the DOM-----------------
 
-  if (tip && people) {
-    if (people === "" || people === 0 || !people) {
+  if (tip) {
+    if (people === "" || people === 0) {
       errorMsg.textContent = "Can't be zero";
     }
     /////Tip Per Person
@@ -47,7 +47,8 @@ billInput.addEventListener("input", (e) => {
 
     //////Tip Total Person
     totalPerson.textContent =
-      totalPerson.textContent.slice(0, 1) + (value * 3 * tip) / 100;
+      totalPerson.textContent.slice(0, 1) +
+      (value * (people ? people : 1) * tip) / 100;
   } else {
     errorMsg.textContent = "";
   }
@@ -78,7 +79,8 @@ numOfPeople.addEventListener("input", (e) => {
 //----------------Custom tip percentage
 customTipPercentages.addEventListener("input", (e) => {
   e.preventDefault();
-  const value = Number(customTipPercentages.value);
+  const value = +customTipPercentages.value;
+  customTip = value;
 });
 
 //Clears input fields when page is reloaded
