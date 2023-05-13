@@ -29,7 +29,6 @@ parentTipContainer.addEventListener("click", (e) => {
   document.querySelector(".active")?.classList.remove("active");
   clickedEl.classList.add("active");
   tip = +clickedEl.textContent.replace("%", "");
-  // console.log(tip);
 });
 
 //---------Bill input
@@ -52,7 +51,7 @@ billInput.addEventListener("input", (e) => {
 
   //Deactivates reset btn if billinput is empty or
   // reverse if billinput contain a value
-  billInput.value && billInput.value > 0 && isFinite(+tip)
+  billInput.value && billInput.value > 0
     ? resetBtn.classList.add("hover")
     : resetBtn.classList.remove("hover");
 });
@@ -82,12 +81,23 @@ customTipPercentages.addEventListener("input", (e) => {
 
 //Reset
 resetBtn.addEventListener("click", () => {
-  customTip[0].classList.remove("active");
+  /* 
+  To remove active classlist from the percentage buttons, since the target element was 
+  passed in an array, check if array.length is equal or greater than 1, 
+  ### YES: pop the array ---////
+  ### NO: return the array ---////
+
+  */
+  customTip[0]?.classList.remove("active");
+  customTip.length >= 1 ? customTip.pop() : customTip;
+
   billInput.value = "";
   numOfPeople.value = "";
   customTipPercentages.value = "";
   totalPerson.textContent = tipAmount.textContent = "$0.00";
+  resetBtn.classList.remove("hover");
 });
+
 //Clears input fields when page is reloaded
 window.addEventListener("load", () => {
   customTipPercentages.value = "";
