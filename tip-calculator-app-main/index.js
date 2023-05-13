@@ -1,23 +1,28 @@
 "use strict";
-
 ////////////////////////////SELECTOR ELEMENTS
 const billInput = document.querySelector("#bill"),
   numOfPeople = document.getElementById("people"),
-  tipPercentages = document.querySelectorAll(".tips"),
   customTipPercentages = document.querySelector(".custom"),
-  resetBtn = document.querySelector(".reset"),
-  tipAmount = document.querySelector(".per__person"),
-  totalPerson = document.querySelector(".total__person"),
   parentTipContainer = document.querySelector(".tips__control"),
-  errorMsg = document.querySelector(".people__error");
+  errorMsg = document.querySelector(".people__error"),
+  resetBtn = document.querySelector(".reset");
 
-let tip, people, customTip, clickedTip;
+let tipAmount = document.querySelector(".per__person");
+let totalPerson = document.querySelector(".total__person");
 
+let tip, people, clickedTip;
+let customTip = [];
 ////////////////////////////EVENT HANDLERS
 
-// ---------Tip percentage
+//---------Tip percentage
+/* 
+Tried forEach method but button value can't be read,
+but amazingly propagating the event from the parent 
+to the clicked node list seems to do the trick😁
+*/
 parentTipContainer.addEventListener("click", (e) => {
   e.preventDefault();
+  customTip.push(e.target);
   const clickedEl = e.target;
   clickedTip = clickedEl;
   //Removes active class
@@ -30,11 +35,8 @@ parentTipContainer.addEventListener("click", (e) => {
 //---------Bill input
 billInput.addEventListener("input", (e) => {
   e.preventDefault();
-  const value = +billInput.value;
 
-  // console.log(value);
-  console.log(people);
-  console.log(tip);
+  const value = +billInput.value;
   // Update the DOM-----------------
 
   //Tip percentage passed either from buttons or custom input field
@@ -80,9 +82,11 @@ customTipPercentages.addEventListener("input", (e) => {
 
 //Reset
 resetBtn.addEventListener("click", () => {
+  customTip[0].classList.remove("active");
   billInput.value = "";
   numOfPeople.value = "";
   customTipPercentages.value = "";
+  totalPerson.textContent = tipAmount.textContent = "$0.00";
 });
 //Clears input fields when page is reloaded
 window.addEventListener("load", () => {
@@ -90,3 +94,19 @@ window.addEventListener("load", () => {
   billInput.value = "";
   numOfPeople.value = "";
 });
+
+//#--------An algorithm to sort out duplicates in an array
+
+// const dup = ["dan", "gog", "lat", "gog", "jeg", "reg"];
+// const findDup = (arr) => {
+//   const sortedArray = arr.slice().sort();
+//   const dups = [];
+//   for (const [i, arr] of sortedArray.entries()) {
+//     if (sortedArray[i + 1] == sortedArray[i]) {
+//       dups.push(sortedArray[i]);
+//     }
+//   }
+//   return dups.join();
+// };
+
+// console.log(findDup(dup));
